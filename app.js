@@ -10,13 +10,23 @@ class StringCalculator {
     // }
 
     let sum = 0;
+    let negativeNumbers = [];
 
     for (const number of numberArray) {
       if (isNaN(number)) {
         throw new Error("Input contains invalid number.");
       }
-      sum += parseInt(number);
+      const addedNumber = parseInt(number);
+      if (addedNumber < 0) {
+        negativeNumbers.push(addedNumber);
+      }
+      sum += addedNumber;
     }
+
+    if (negativeNumbers.length > 0) {
+      throw new Error(`Negatives not allowed: ${negativeNumbers.join(", ")}`);
+    }
+
     return sum;
   }
 }

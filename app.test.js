@@ -30,4 +30,10 @@ describe("StringCalculator", () => {
   test("should handle an unknown amount of numbers", () => {
     expect(stringCalculator.add("1,2,3,4,5")).toBe(15);
   });
+
+  test("should throw an error for multiple negative numbers in the input string", () => {
+    expect(() => stringCalculator.add("1,-2,3,-4")).toThrow(
+      "Negatives not allowed: -2, -4"
+    );
+  });
 });
