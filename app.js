@@ -5,9 +5,9 @@ class StringCalculator {
     }
 
     const numberArray = numbers.split(",");
-    if (numberArray.length > 2) {
-      throw new Error("The method only supports up to 2 numbers.");
-    }
+    // if (numberArray.length > 2) {
+    //   throw new Error("The method only supports up to 2 numbers.");
+    // }
 
     let sum = 0;
 
