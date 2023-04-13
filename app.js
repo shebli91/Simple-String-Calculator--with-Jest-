@@ -19,8 +19,9 @@ class StringCalculator {
       const addedNumber = parseInt(number);
       if (addedNumber < 0) {
         negativeNumbers.push(addedNumber);
+      } else if (addedNumber <= 1000) {
+        sum += addedNumber;
       }
-      sum += addedNumber;
     }
 
     if (negativeNumbers.length > 0) {
